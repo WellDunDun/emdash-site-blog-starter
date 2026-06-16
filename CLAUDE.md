@@ -9,6 +9,8 @@ npx emdash types      # Regenerate TypeScript types from schema
 pnpm build            # Build for Cloudflare Workers
 pnpm deploy           # Build and deploy with Wrangler
 pnpm init:project     # Rename a generated project from this template
+pnpm setup:cloudflare # Create D1/R2 resources with Wrangler
+pnpm smoke:test       # Check key public routes against a running dev/prod URL
 ```
 
 The admin UI is at `http://localhost:4321/_emdash/admin`.
@@ -45,9 +47,9 @@ Agent skills are in `.agents/skills/`. Load them when working on specific tasks:
 
 ## Documentation
 
-The EmDash docs are available as an MCP server at `https://docs.emdashcms.com/mcp`. When verifying APIs, hooks, config options, field types, or patterns, call `search_docs` against the live documentation.
+The EmDash docs are available as an MCP server at `https://docs.emdashcms.com/mcp`. Astro docs are available at `https://mcp.docs.astro.build/mcp`. When verifying CMS APIs, hooks, config options, field types, routes, server rendering, assets, integrations, or Cloudflare behavior, use the relevant live documentation rather than relying on memory.
 
-This template ships with `.mcp.json`, `.cursor/mcp.json`, and `.vscode/mcp.json` so Claude Code, Cursor, and VS Code auto-discover the docs server.
+This template ships with `.mcp.json`, `.cursor/mcp.json`, and `.vscode/mcp.json` so Codex, Claude Code style workflows, Cursor, and VS Code can discover the docs servers.
 
 ## Content Model
 

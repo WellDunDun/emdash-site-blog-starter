@@ -8,6 +8,8 @@
   },
   "scripts": {
     "init:project": "node scripts/init-project.mjs",
+    "setup:cloudflare": "node scripts/setup-cloudflare.mjs",
+    "smoke:test": "node scripts/smoke-test.mjs",
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
