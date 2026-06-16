@@ -33,9 +33,18 @@ A combined SaaS landing page and blog template built with [EmDash](https://githu
 
 ```bash
 pnpm install
-pnpm bootstrap
-pnpm dev
+pnpm dev -- --host 127.0.0.1
 ```
+
+## Creating a New SaaS Project
+
+Create a repo from this template, then run the initializer once:
+
+```bash
+pnpm init:project acme-analytics --title "Acme Analytics" --tagline "Operational analytics for SaaS teams"
+```
+
+The initializer updates `package.json`, `wrangler.jsonc`, `seed/seed.json`, and the README heading with project-specific names.
 
 ## Cloudflare
 

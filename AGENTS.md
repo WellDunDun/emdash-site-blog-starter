@@ -8,6 +8,7 @@ npx emdash dev        # Start dev server, run migrations/seeding, generate types
 npx emdash types      # Regenerate TypeScript types from schema
 pnpm build            # Build for Cloudflare Workers
 pnpm deploy           # Build and deploy with Wrangler
+pnpm init:project     # Rename a generated project from this template
 ```
 
 The admin UI is at `http://localhost:4321/_emdash/admin`.
@@ -80,4 +81,3 @@ This template ships with `.mcp.json`, `.cursor/mcp.json`, and `.vscode/mcp.json`
 - Call `Astro.cache.set(cacheHint)` on GET pages that query content, defensively if the route also handles non-GET methods.
 - Taxonomy names in queries must match seed names exactly: `category`, `tag`.
 - Marketing blocks are registered by `src/plugins/marketing-blocks/` and rendered through `MarketingBlocks.astro`.
-
