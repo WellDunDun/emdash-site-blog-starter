@@ -68,7 +68,8 @@ This template ships MCP configs for agents that support repo-local MCP:
 
 Configured files:
 
-- `.mcp.json` for tools that read root MCP config, including Codex and Claude Code style workflows
+- `.codex/config.toml` for Codex CLI and the Codex IDE extension in trusted projects
+- `.mcp.json` for tools that read root MCP config, including Claude Code style workflows
 - `.cursor/mcp.json` for Cursor
 - `.vscode/mcp.json` for VS Code
 

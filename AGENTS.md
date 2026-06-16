@@ -49,7 +49,7 @@ Agent skills are in `.agents/skills/`. Load them when working on specific tasks:
 
 The EmDash docs are available as an MCP server at `https://docs.emdashcms.com/mcp`. Astro docs are available at `https://mcp.docs.astro.build/mcp`. When verifying CMS APIs, hooks, config options, field types, routes, server rendering, assets, integrations, or Cloudflare behavior, use the relevant live documentation rather than relying on memory.
 
-This template ships with `.mcp.json`, `.cursor/mcp.json`, and `.vscode/mcp.json` so Codex, Claude Code style workflows, Cursor, and VS Code can discover the docs servers.
+This template ships with `.codex/config.toml`, `.mcp.json`, `.cursor/mcp.json`, and `.vscode/mcp.json` so Codex, Claude Code style workflows, Cursor, and VS Code can discover the docs servers.
 
 ## Content Model
 
