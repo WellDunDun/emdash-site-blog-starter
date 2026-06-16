@@ -1,4 +1,4 @@
-This is a combined EmDash Marketing + Blog site built on Astro for Cloudflare Workers.
+This is a combined SaaS site + blog built with EmDash and Astro for Cloudflare Workers.
 
 ## Commands
 
@@ -62,7 +62,7 @@ This template ships with `.mcp.json`, `.cursor/mcp.json`, and `.vscode/mcp.json`
 | Route | Purpose |
 | --- | --- |
 | `/` | Marketing homepage from the `home` page content |
-| `/blog` | Blog landing page with featured/latest posts |
+| `/blog` | Blog home with featured/latest posts |
 | `/posts` | Full post archive |
 | `/posts/[slug]` | Post detail with comments, sidebar widgets, TOC, related posts |
 | `/category/[slug]` | Category archive |
