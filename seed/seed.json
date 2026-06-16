@@ -2,8 +2,8 @@
 	"$schema": "https://emdashcms.com/seed.schema.json",
 	"version": "1",
 	"meta": {
-		"name": "SaaS Site + Blog Cloudflare Starter",
-		"description": "A SaaS site and blog with CMS pages, posts, taxonomies, search, RSS, and Cloudflare deployment",
+		"name": "EmDash Site + Blog Starter",
+		"description": "An AI-ready site and blog starter with CMS pages, posts, taxonomies, search, RSS, and Cloudflare deployment",
 		"author": "EmDash"
 	},
 	"settings": {

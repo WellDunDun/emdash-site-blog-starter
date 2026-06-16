@@ -27,8 +27,8 @@ updateJson("package.json", (pkg) => {
 updateJson("seed/seed.json", (seed) => {
 	seed.meta = {
 		...seed.meta,
-		name: title + " Marketing Blog Starter",
-		description: "Marketing site and blog starter content for " + title,
+		name: title + " Site + Blog Starter",
+		description: "AI-ready site and blog starter content for " + title,
 	};
 	seed.settings = {
 		...seed.settings,
@@ -127,8 +127,8 @@ function printHelp() {
 	console.log(`Usage: pnpm init:project <project-name> [--title "Display Name"] [--tagline "Tagline"]
 
 Examples:
-  pnpm init:project acme-analytics
-  pnpm init:project acme-analytics --title "Acme Analytics" --tagline "Operational analytics for SaaS teams"
+  pnpm init:project brightline-studio
+  pnpm init:project brightline-studio --title "Brightline Studio" --tagline "Launch-ready websites for ambitious teams"
 
 This updates:
   package.json

@@ -1,4 +1,4 @@
-This is a combined SaaS site + blog built with EmDash and Astro for Cloudflare Workers.
+This is EmDash Site + Blog Starter: an AI-ready site and blog template built with EmDash and Astro for Cloudflare Workers.
 
 ## Commands
 

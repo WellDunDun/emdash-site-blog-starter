@@ -143,8 +143,8 @@ Options:
   --skip-r2              Do not create R2
 
 Examples:
-  pnpm setup:cloudflare acme-analytics
-  pnpm setup:cloudflare acme-analytics --location enam
+  pnpm setup:cloudflare brightline-studio
+  pnpm setup:cloudflare brightline-studio --location enam
 
 This runs Wrangler resource creation commands with --update-config. Review wrangler.jsonc after it completes.`);
 }

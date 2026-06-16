@@ -1,9 +1,9 @@
 # Content Customization Prompt
 
 ```text
-Customize this SaaS site + blog template for the product below.
+Customize this AI-ready site + blog template for the product, service, or agency below.
 
-Product:
+Project:
 - Name:
 - Audience:
 - Problem:
@@ -23,5 +23,5 @@ Update:
 4. First three blog posts so they match the product and audience.
 5. Menus, footer links, site title, tagline, and any obvious placeholder metadata.
 
-Keep the current template structure unless the product truly needs a different IA. Run pnpm typecheck and pnpm build after changes.
+Keep the current template structure unless the project truly needs a different IA. Run pnpm typecheck and pnpm build after changes.
 ```

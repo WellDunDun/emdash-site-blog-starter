@@ -1,6 +1,6 @@
 ---
 name: Go-live checklist
-about: Track production launch readiness for a generated SaaS site + blog
+about: Track production launch readiness for a generated site + blog
 title: "Go live: "
 labels: launch
 assignees: ""

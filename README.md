@@ -1,6 +1,6 @@
-# SaaS Site + Blog Template (Cloudflare)
+# EmDash Site + Blog Starter
 
-A combined SaaS site and blog template built with [EmDash](https://github.com/emdash-cms/emdash), Astro, and Cloudflare Workers. It merges the EmDash marketing and blog Cloudflare templates into one deployable site with D1, R2, CMS-managed pages, posts, search, RSS, and modular marketing blocks.
+An AI-ready site and blog starter built with [EmDash](https://github.com/emdash-cms/emdash), Astro, and Cloudflare Workers. It merges the EmDash marketing and blog Cloudflare templates into one deployable foundation for SaaS products, agencies, services businesses, and content-led launches with D1, R2, CMS-managed pages, posts, search, RSS, and modular marketing blocks.
 
 ## What's Included
 
@@ -10,7 +10,7 @@ A combined SaaS site and blog template built with [EmDash](https://github.com/em
 - Full-text search and RSS feed
 - CMS-managed pages, posts, menus, taxonomies, bylines, widgets, and sections
 - Cloudflare Workers runtime with D1 database and R2 media storage
-- Agent-ready MCP configs for EmDash and Astro docs
+- AI-ready agent prompts and MCP configs for EmDash and Astro docs
 - Project initializer, Cloudflare setup helper, route smoke test, CI workflow, and launch issue template
 - Dark/light mode
 
@@ -44,16 +44,16 @@ In another terminal, smoke test the running site:
 pnpm smoke:test
 ```
 
-## Creating a New SaaS Project
+## Creating a New Project
 
 Create a repo from this template, then run the initializer once:
 
 ```bash
-gh repo create acme-analytics --template WellDunDun/saas-landing-page --private --clone
-cd acme-analytics
+gh repo create brightline-studio --template WellDunDun/emdash-site-blog-starter --private --clone
+cd brightline-studio
 pnpm install
-pnpm init:project acme-analytics --title "Acme Analytics" --tagline "Operational analytics for SaaS teams"
-pnpm setup:cloudflare acme-analytics
+pnpm init:project brightline-studio --title "Brightline Studio" --tagline "Launch-ready websites for ambitious teams"
+pnpm setup:cloudflare brightline-studio
 ```
 
 The initializer updates `package.json`, `wrangler.jsonc`, `seed/seed.json`, and the README heading with project-specific names.
@@ -76,7 +76,7 @@ Configured files:
 Reusable prompts live in `docs/prompts/`:
 
 - `new-project-agent.md` for complete project setup
-- `content-customization.md` for rewriting seeded SaaS content
+- `content-customization.md` for rewriting seeded product, service, or agency content
 - `og-image.md` for generating a production Open Graph image
 
 ## Copy-Paste Agent Prompt
@@ -84,28 +84,28 @@ Reusable prompts live in `docs/prompts/`:
 Use this prompt when handing a newly-created repo to a coding agent, or use `docs/prompts/new-project-agent.md` for the longer version:
 
 ```text
-Set up this repo as a new SaaS site + blog from the template.
+Set up this repo as a new AI-ready site + blog from the template.
 
-Project slug: acme-analytics
-Display title: Acme Analytics
-Tagline: Operational analytics for SaaS teams
+Project slug: brightline-studio
+Display title: Brightline Studio
+Tagline: Launch-ready websites for ambitious teams
 
 Do the full setup:
 1. Run pnpm install.
-2. Run pnpm init:project acme-analytics --title "Acme Analytics" --tagline "Operational analytics for SaaS teams".
-3. Create/update Cloudflare resources with pnpm setup:cloudflare acme-analytics.
+2. Run pnpm init:project brightline-studio --title "Brightline Studio" --tagline "Launch-ready websites for ambitious teams".
+3. Create/update Cloudflare resources with pnpm setup:cloudflare brightline-studio.
 4. Confirm wrangler.jsonc still has the DB binding, MEDIA binding, LOADER worker loader, nodejs_compat flag, and src/worker.ts entrypoint.
 5. Run pnpm typecheck and pnpm build.
 6. Start pnpm dev -- --host 127.0.0.1 and run pnpm smoke:test.
 7. Use docs/prompts/og-image.md to create a 1200x630 Open Graph image.
-8. Replace placeholder copy/assets only where needed for the product, then commit the setup changes.
+8. Replace placeholder copy/assets only where needed for the project, then commit the setup changes.
 ```
 
 ## Cloudflare
 
 `wrangler.jsonc` defines:
 
-- Worker name: `saas-site-blog`
+- Worker name: `emdash-site-blog-starter`
 - D1 binding: `DB`
 - R2 binding: `MEDIA`
 - Worker loader binding: `LOADER`
@@ -118,7 +118,7 @@ pnpm deploy
 
 ## Go-Live Checklist
 
-Use this before pointing production traffic at a new SaaS site + blog.
+Use this before pointing production traffic at a new site + blog.
 
 ### Product and Content
 
