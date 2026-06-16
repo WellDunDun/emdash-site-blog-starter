@@ -1,4 +1,4 @@
-This is a combined SaaS site + blog built with EmDash and Astro for Cloudflare Workers.
+This is EmDash Site + Blog Starter: an AI-ready site and blog template built with EmDash and Astro for Cloudflare Workers.
 
 ## Commands
 
@@ -41,6 +41,7 @@ The admin UI is at `http://localhost:4321/_emdash/admin`.
 
 Agent skills are in `.agents/skills/`. Load them when working on specific tasks:
 
+- **emdash-site-blog-starter** -- Interviewing project owners, gathering a launch brief, setting up generated projects, customizing site/blog content, planning OG/blog images, and preparing Cloudflare go-live work.
 - **building-emdash-site** -- Querying content, rendering Portable Text, schema design, seed files, menus, widgets, search, SEO, comments, bylines.
 - **creating-plugins** -- Building EmDash plugins with hooks, storage, admin UI, API routes, and Portable Text block types.
 - **emdash-cli** -- CLI commands for content management, seeding, type generation, and visual editing flow.

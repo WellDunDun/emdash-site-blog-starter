@@ -1,19 +1,19 @@
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "saas-site-blog",
+	"name": "emdash-site-blog-starter",
 	"main": "./src/worker.ts",
 	"compatibility_date": "2026-02-24",
 	"compatibility_flags": ["nodejs_compat"],
 	"d1_databases": [
 		{
 			"binding": "DB",
-			"database_name": "saas-site-blog",
+			"database_name": "emdash-site-blog-starter",
 		},
 	],
 	"r2_buckets": [
 		{
 			"binding": "MEDIA",
-			"bucket_name": "saas-site-blog-media",
+			"bucket_name": "emdash-site-blog-starter-media",
 		},
 	],
 	// Worker Loader for plugin sandboxing
