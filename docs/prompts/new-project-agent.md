@@ -3,6 +3,8 @@
 ```text
 Set up this repo as a new AI-ready site + blog from the template.
 
+If repo skills are available, load .agents/skills/emdash-site-blog-starter/SKILL.md first. Interview me for any missing project details before editing.
+
 Project slug: brightline-studio
 Display title: Brightline Studio
 Tagline: Launch-ready websites for ambitious teams

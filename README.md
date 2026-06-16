@@ -59,7 +59,7 @@ pnpm setup:cloudflare brightline-studio
 The initializer updates `package.json`, `wrangler.jsonc`, `seed/seed.json`, and the README heading with project-specific names.
 The Cloudflare setup helper creates D1/R2 resources with Wrangler and updates `wrangler.jsonc`; review the config after it runs.
 
-## Agent Docs and Prompts
+## Agent Docs, Skill, and Prompts
 
 This template ships MCP configs for agents that support repo-local MCP:
 
@@ -73,7 +73,11 @@ Configured files:
 - `.cursor/mcp.json` for Cursor
 - `.vscode/mcp.json` for VS Code
 
-Reusable prompts live in `docs/prompts/`:
+Use the repo-local interview skill when the agent supports skills:
+
+- `.agents/skills/emdash-site-blog-starter/SKILL.md` interviews for the project brief, then drives setup, content customization, image direction, Cloudflare readiness, and launch checks.
+
+Reusable fallback prompts live in `docs/prompts/`:
 
 - `new-project-agent.md` for complete project setup
 - `content-customization.md` for rewriting seeded product, service, or agency content
@@ -81,10 +85,12 @@ Reusable prompts live in `docs/prompts/`:
 
 ## Copy-Paste Agent Prompt
 
-Use this prompt when handing a newly-created repo to a coding agent, or use `docs/prompts/new-project-agent.md` for the longer version:
+Use this prompt when handing a newly-created repo to a coding agent that cannot load repo skills, or use `docs/prompts/new-project-agent.md` for the longer version:
 
 ```text
 Set up this repo as a new AI-ready site + blog from the template.
+
+If you can load repo skills, use .agents/skills/emdash-site-blog-starter/SKILL.md first and interview me for missing project details before editing.
 
 Project slug: brightline-studio
 Display title: Brightline Studio

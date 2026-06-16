@@ -2,6 +2,8 @@
 
 Use this prompt with an image-generation tool to create a production Open Graph image.
 
+If repo skills are available, load .agents/skills/emdash-site-blog-starter/SKILL.md first and gather the visual brief before generating assets.
+
 ```text
 Create a 1200x630 Open Graph image for an AI-ready site + blog.
 

@@ -3,6 +3,8 @@
 ```text
 Customize this AI-ready site + blog template for the product, service, or agency below.
 
+If repo skills are available, load .agents/skills/emdash-site-blog-starter/SKILL.md first. Interview me for any missing project, audience, CTA, tone, blog, or visual details before editing.
+
 Project:
 - Name:
 - Audience:
