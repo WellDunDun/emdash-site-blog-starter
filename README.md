@@ -182,3 +182,7 @@ Use this before pointing production traffic at a new site + blog.
 - Marketing block renderers live in `src/components/blocks/`.
 - Blog components live in `src/components/PostCard.astro` and `src/components/TagList.astro`.
 - Prompt templates live in `docs/prompts/`.
+
+## License
+
+MIT
