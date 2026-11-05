@@ -1,3 +1,5 @@
+import siteConfig from "./site.config.json" with { type: "json" };
+import tailwindcss from "@tailwindcss/vite";
 import cloudflare from "@astrojs/cloudflare";
 import react from "@astrojs/react";
 import { d1, r2, sandbox } from "@emdash-cms/cloudflare";
@@ -7,7 +9,10 @@ import icon from "astro-iconset";
 import { defineConfig, fontProviders } from "astro/config";
 import emdash from "emdash/astro";
 
+const siteUrl = process.env.SITE_URL || siteConfig.url || undefined;
+
 export default defineConfig({
+	site: siteUrl,
 	output: "server",
 	adapter: cloudflare(),
 	image: {
@@ -15,29 +20,8 @@ export default defineConfig({
 		responsiveStyles: true,
 	},
 	vite: {
-		ssr: {
-			optimizeDeps: {
-				// Pre-bundle so it isn't discovered mid-render, which would trigger
-				// a Vite dep re-optimization and break in-flight worker imports
-				// under the Cloudflare dev runner (workerd).
-				include: [
-					"astro-iconset/components",
-					"@emdash-cms/cloudflare/db/d1",
-					"@emdash-cms/cloudflare/storage/r2",
-					"@emdash-cms/plugin-forms",
-					"@emdash-cms/plugin-forms/astro",
-					"astro/zod",
-					"emdash/media/local-runtime",
-					"emdash/middleware",
-					"emdash/middleware/auth",
-					"emdash/middleware/redirect",
-					"emdash/middleware/request-context",
-					"emdash/middleware/setup",
-					"emdash/runtime",
-					"emdash/ui",
-				],
-			},
-		},
+		plugins: [tailwindcss()],
+
 	},
 	integrations: [
 		react(),
@@ -67,6 +51,7 @@ export default defineConfig({
 			},
 		}),
 		emdash({
+			siteUrl,
 			database: d1({ binding: "DB", session: "auto" }),
 			storage: r2({ binding: "MEDIA" }),
 			plugins: [

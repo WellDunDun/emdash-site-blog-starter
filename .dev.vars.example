@@ -1,0 +1,4 @@
+# Copy to .dev.vars. Never commit real webhook URLs or tokens.
+# For a local receiver only, HTTP is allowed in development.
+CONTACT_WEBHOOK_URL="http://127.0.0.1:8788/contact"
+CONTACT_WEBHOOK_TOKEN=""

@@ -1,0 +1,30 @@
+---
+import Base from "../layouts/Base.astro";
+---
+<Base robots="noindex, nofollow" title="Design system" description="Shared tokens, controls, and content patterns.">
+  <div class="mx-auto max-w-5xl px-6 py-16 text-foreground">
+    <h1 class="text-4xl font-bold">Design system</h1>
+    <p class="mt-4 text-muted">Change theme.css to rebrand both CMS blocks and Tailwind utilities. Use the header controls to check light and dark modes.</p>
+    <section class="mt-12" aria-labelledby="palette">
+      <h2 id="palette" class="text-2xl font-semibold">Semantic colors</h2>
+      <div class="mt-6 grid gap-4 sm:grid-cols-3">
+        <div class="rounded-control border border-border bg-canvas p-6">Canvas</div>
+        <div class="rounded-control border border-border bg-surface p-6">Surface</div>
+        <div class="rounded-control border border-border p-6 text-brand">Brand text</div>
+      </div>
+    </section>
+    <section class="mt-12" aria-labelledby="actions">
+      <h2 id="actions" class="text-2xl font-semibold">Actions and keyboard focus</h2>
+      <div class="mt-6 flex flex-wrap gap-4">
+        <a href="#typography" class="btn btn-primary">Primary action</a>
+        <a href="#typography" class="btn btn-secondary">Secondary action</a>
+        <a href="#typography">Text link</a>
+      </div>
+    </section>
+    <section id="typography" class="mt-12 rounded-control border border-border bg-surface p-8">
+      <h2 class="text-2xl font-semibold">Content card</h2>
+      <p class="mt-4">Use existing marketing blocks for CMS content. Use semantic utilities for new layouts, with tokens for colors, spacing, and type.</p>
+      <p class="mt-3 text-sm text-muted">Tab through controls, resize the page, and check reduced motion before release.</p>
+    </section>
+  </div>
+</Base>

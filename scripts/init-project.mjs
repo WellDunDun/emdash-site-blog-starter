@@ -13,7 +13,14 @@ if (!projectName || projectName === "--help" || projectName === "-h") {
 const options = parseOptions(args.slice(1));
 const slug = slugify(projectName);
 const title = options.title || humanize(projectName);
-const tagline = options.tagline || "Build products people actually want";
+const tagline = options.tagline || "A website and blog you can make your own.";
+let siteUrl;
+if (options.site) {
+  const parsed = new URL(options.site);
+  if (parsed.protocol !== "https:" || parsed.pathname !== "/" || parsed.search || parsed.hash || parsed.username || parsed.password) throw new Error("--site must be an HTTPS origin, such as https://example.com");
+  siteUrl = parsed.origin;
+}
+if (options.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(options.email)) throw new Error("--email must be a valid contact address");
 
 if (!slug) {
 	console.error("Project name must contain at least one letter or number.");
@@ -34,7 +41,13 @@ updateJson("seed/seed.json", (seed) => {
 		...seed.settings,
 		title,
 		tagline,
+    ...(siteUrl ? { url: siteUrl } : {}),
 	};
+});
+
+updateJson("site.config.json", (config) => {
+  if (siteUrl) config.url = siteUrl;
+  if (options.email) config.contactEmail = options.email;
 });
 
 updateWrangler(slug);
@@ -44,7 +57,7 @@ console.log("Initialized project: " + title);
 console.log("Package/Worker name: " + slug);
 console.log("Next steps:");
 console.log("  pnpm install");
-console.log("  pnpm dev -- --host 127.0.0.1");
+console.log("  pnpm dev --host 127.0.0.1");
 console.log("  Create matching Cloudflare D1/R2 resources before deploy.");
 
 function parseOptions(optionArgs) {
@@ -53,27 +66,12 @@ function parseOptions(optionArgs) {
 	for (let index = 0; index < optionArgs.length; index += 1) {
 		const arg = optionArgs[index];
 
-		if (arg.startsWith("--title=")) {
-			parsed.title = arg.slice("--title=".length);
-			continue;
-		}
+    const match = arg.match(/^--(title|tagline|site|email)(?:=(.*))?$/);
+    if (!match) throw new Error("Unknown option: " + arg);
+    const value = match[2] ?? optionArgs[++index];
+    if (!value || value.startsWith("--")) throw new Error("Missing value for " + match[1]);
+    parsed[match[1]] = value;
 
-		if (arg === "--title") {
-			parsed.title = optionArgs[index + 1];
-			index += 1;
-			continue;
-		}
-
-		if (arg.startsWith("--tagline=")) {
-			parsed.tagline = arg.slice("--tagline=".length);
-			continue;
-		}
-
-		if (arg === "--tagline") {
-			parsed.tagline = optionArgs[index + 1];
-			index += 1;
-			continue;
-		}
 	}
 
 	return parsed;
@@ -124,7 +122,7 @@ function updateReadme(titleValue) {
 }
 
 function printHelp() {
-	console.log(`Usage: pnpm init:project <project-name> [--title "Display Name"] [--tagline "Tagline"]
+	console.log(`Usage: pnpm init:project <project-name> [--title "Display Name"] [--tagline "Tagline"] [--site https://example.com] [--email hello@example.com]
 
 Examples:
   pnpm init:project brightline-studio
@@ -134,5 +132,6 @@ This updates:
   package.json
   wrangler.jsonc
   seed/seed.json
+  site.config.json
   README.md`);
 }

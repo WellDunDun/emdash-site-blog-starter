@@ -7,8 +7,8 @@
 		"author": "EmDash"
 	},
 	"settings": {
-		"title": "Acme",
-		"tagline": "Build products people actually want"
+		"title": "EmDash Starter",
+		"tagline": "A website and blog you can make your own."
 	},
 	"collections": [
 		{
@@ -35,7 +35,8 @@
 					"type": "portableText",
 					"searchable": true
 				}
-			]
+			],
+			"urlPattern": "/pages/{slug}"
 		},
 		{
 			"slug": "posts",
@@ -72,7 +73,8 @@
 					"label": "Excerpt",
 					"type": "text"
 				}
-			]
+			],
+			"urlPattern": "/posts/{slug}"
 		}
 	],
 	"taxonomies": [
@@ -184,7 +186,7 @@
 				{
 					"type": "custom",
 					"label": "Changelog",
-					"url": "/changelog"
+					"url": "https://github.com/WellDunDun/emdash-site-blog-starter/commits/master/"
 				}
 			]
 		},
@@ -204,8 +206,8 @@
 				},
 				{
 					"type": "custom",
-					"label": "Careers",
-					"url": "/careers"
+					"label": "Contact",
+					"url": "/contact"
 				}
 			]
 		},
@@ -216,17 +218,12 @@
 				{
 					"type": "custom",
 					"label": "Documentation",
-					"url": "/docs"
+					"url": "https://docs.emdashcms.com/"
 				},
 				{
 					"type": "custom",
 					"label": "Contact",
 					"url": "/contact"
-				},
-				{
-					"type": "custom",
-					"label": "Status",
-					"url": "/status"
 				}
 			]
 		}
@@ -256,7 +253,7 @@
 					"type": "component",
 					"componentId": "core:recent-posts",
 					"title": "Recent Posts",
-					"settings": {
+					"props": {
 						"count": 5,
 						"showDate": true
 					}
@@ -265,7 +262,7 @@
 					"type": "component",
 					"componentId": "core:archives",
 					"title": "Archives",
-					"settings": {
+					"props": {
 						"type": "monthly",
 						"limit": 6
 					}
@@ -375,96 +372,52 @@
 						{
 							"_type": "marketing.hero",
 							"_key": "hero",
-							"headline": "Build products people actually want",
-							"subheadline": "The all-in-one platform for modern teams. Ship faster, collaborate better, and focus on what matters.",
-							"primaryCtaLabel": "Start Free Trial",
-							"primaryCtaUrl": "/signup",
-							"secondaryCtaLabel": "Watch Demo",
-							"secondaryCtaUrl": "/demo"
+							"headline": "Your website. Your publishing workflow.",
+							"subheadline": "Start with CMS-managed pages, a searchable blog, and reusable marketing blocks. Change the content and design to fit your project.",
+							"primaryCtaLabel": "Explore the blog",
+							"primaryCtaUrl": "/blog",
+							"secondaryCtaLabel": "View the design system",
+							"secondaryCtaUrl": "/design-system"
 						},
 						{
 							"_type": "marketing.features",
 							"_key": "features",
-							"headline": "Everything you need to ship",
-							"subheadline": "Powerful features that help your team move faster without sacrificing quality.",
+							"headline": "One home for pages and posts",
+							"subheadline": "A working foundation for your next product, service, or publication.",
 							"features": [
 								{
-									"icon": "zap",
-									"title": "Lightning Fast",
-									"description": "Built for speed from the ground up. Your team will notice the difference from day one."
-								},
-								{
-									"icon": "shield",
-									"title": "Enterprise Security",
-									"description": "SOC 2 compliant with end-to-end encryption. Your data stays yours."
-								},
-								{
-									"icon": "users",
-									"title": "Team Collaboration",
-									"description": "Real-time collaboration features that make working together feel effortless."
-								},
-								{
-									"icon": "chart",
-									"title": "Powerful Analytics",
-									"description": "Understand how your team works with detailed insights and reporting."
-								},
-								{
 									"icon": "code",
-									"title": "Developer Friendly",
-									"description": "A robust API and CLI tools that integrate with your existing workflow."
+									"title": "Design tokens and Tailwind",
+									"description": "Shared colors, typography, and spacing connect custom layouts with CMS content."
 								},
 								{
 									"icon": "globe",
-									"title": "Global Scale",
-									"description": "Deployed to edge locations worldwide. Fast for everyone, everywhere."
-								}
-							]
-						},
-						{
-							"_type": "marketing.testimonials",
-							"_key": "testimonials",
-							"headline": "Trusted by teams everywhere",
-							"testimonials": [
-								{
-									"quote": "We cut our deployment time by 80%. The team actually enjoys shipping now.",
-									"author": "Sarah Chen",
-									"role": "CTO",
-									"company": "Streamline"
+									"title": "A searchable blog",
+									"description": "Publish posts with categories, tags, author bylines, and an RSS feed."
 								},
 								{
-									"quote": "The best developer experience I've used. Everything just works the way you'd expect.",
-									"author": "Marcus Johnson",
-									"role": "Lead Engineer",
-									"company": "Volt Labs"
-								},
-								{
-									"quote": "Finally, a tool that doesn't get in the way. Our team is more productive than ever.",
-									"author": "Elena Rodriguez",
-									"role": "VP Engineering",
-									"company": "Nexus"
+									"icon": "users",
+									"title": "An editor for your team",
+									"description": "Manage pages, navigation, and publishing from the EmDash admin."
 								}
 							]
 						},
 						{
 							"_type": "marketing.faq",
 							"_key": "faq",
-							"headline": "Frequently asked questions",
+							"headline": "Before you launch",
 							"items": [
 								{
-									"question": "How long does setup take?",
-									"answer": "Most teams are up and running in under 15 minutes. Our onboarding wizard guides you through connecting your existing tools and inviting your team."
+									"question": "Is this a finished business website?",
+									"answer": "This is a reusable starter. Replace the sample content, artwork, pricing, and contact details with your own before launch."
 								},
 								{
-									"question": "Can I migrate from my current tool?",
-									"answer": "Yes. We have built-in importers for all major platforms, and our support team can help with custom migrations for larger teams."
+									"question": "Can I change the design?",
+									"answer": "Yes. Update the shared theme tokens, use Tailwind utilities for new layouts, and edit the marketing blocks in the CMS."
 								},
 								{
-									"question": "What kind of support do you offer?",
-									"answer": "All plans include email support with a 24-hour response time. Pro and Enterprise plans include priority support with dedicated account managers."
-								},
-								{
-									"question": "Is there a free trial?",
-									"answer": "Yes, all plans come with a 14-day free trial. No credit card required. You can upgrade, downgrade, or cancel at any time."
+									"question": "Where do contact messages go?",
+									"answer": "The contact form sends to a webhook you configure. It stays unavailable until delivery is configured."
 								}
 							]
 						}
@@ -481,8 +434,8 @@
 						{
 							"_type": "marketing.hero",
 							"_key": "pricing-hero",
-							"headline": "Simple, transparent pricing",
-							"subheadline": "No hidden fees. No surprises. Start free and scale as you grow.",
+							"headline": "Example pricing layout",
+							"subheadline": "Sample plans to demonstrate the pricing block. Replace these with your actual offer before launch.",
 							"centered": true
 						},
 						{
@@ -493,27 +446,27 @@
 									"name": "Starter",
 									"price": "$0",
 									"period": "/month",
-									"description": "Perfect for trying things out",
+									"description": "Example plan. Edit this in the CMS.",
 									"features": "Up to 3 team members\n5 projects\nBasic analytics\nCommunity support\n1GB storage",
-									"ctaLabel": "Get Started",
-									"ctaUrl": "/signup"
+									"ctaLabel": "Contact us",
+									"ctaUrl": "/contact"
 								},
 								{
 									"name": "Pro",
 									"price": "$29",
 									"period": "/user/month",
-									"description": "For growing teams",
+									"description": "Example plan. Edit this in the CMS.",
 									"features": "Unlimited team members\nUnlimited projects\nAdvanced analytics\nPriority support\n100GB storage\nCustom integrations\nAPI access",
-									"ctaLabel": "Start Free Trial",
-									"ctaUrl": "/signup?plan=pro",
+									"ctaLabel": "Contact us",
+									"ctaUrl": "/contact",
 									"highlighted": true
 								},
 								{
 									"name": "Enterprise",
 									"price": "Custom",
-									"description": "For large organizations",
+									"description": "Example plan. Edit this in the CMS.",
 									"features": "Everything in Pro\nDedicated support\nCustom contracts\nSLA guarantee\nUnlimited storage",
-									"ctaLabel": "Contact Sales",
+									"ctaLabel": "Contact us",
 									"ctaUrl": "/contact"
 								}
 							]
@@ -524,16 +477,8 @@
 							"headline": "Pricing FAQ",
 							"items": [
 								{
-									"question": "Can I change plans later?",
-									"answer": "Yes, you can upgrade or downgrade at any time. Changes take effect immediately and we'll prorate your billing."
-								},
-								{
-									"question": "What payment methods do you accept?",
-									"answer": "We accept all major credit cards, and Enterprise customers can pay via invoice with NET 30 terms."
-								},
-								{
-									"question": "Is there a discount for annual billing?",
-									"answer": "Yes, annual plans receive a 20% discount compared to monthly billing."
+									"question": "Are these real plans?",
+									"answer": "No. These are sample prices and features for the starter. Set your own pricing and terms before launch."
 								}
 							]
 						}
@@ -546,15 +491,7 @@
 				"status": "published",
 				"data": {
 					"title": "Contact",
-					"content": [
-						{
-							"_type": "marketing.hero",
-							"_key": "contact-hero",
-							"headline": "Get in touch",
-							"subheadline": "Have questions? Want a demo? We'd love to hear from you.",
-							"centered": true
-						}
-					]
+					"content": []
 				}
 			},
 			{

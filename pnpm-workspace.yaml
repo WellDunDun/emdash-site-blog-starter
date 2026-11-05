@@ -14,3 +14,8 @@ minimumReleaseAgeExclude:
   - emdash
   - "@emdash-cms/*"
 blockExoticSubdeps: true
+
+# Keep the editor extensions aligned with EmDash's resolved Tiptap core.
+overrides:
+  "@tiptap/extension-subscript": 3.26.1
+  "@tiptap/extension-superscript": 3.26.1

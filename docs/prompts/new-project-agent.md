@@ -18,13 +18,13 @@ Use the configured MCP docs before changing framework or CMS code:
 
 Do the full setup:
 1. Run pnpm install.
-2. Run pnpm init:project brightline-studio --title "Brightline Studio" --tagline "Launch-ready websites for ambitious teams".
+2. Run pnpm init:project brightline-studio --title "Brightline Studio" --tagline "Launch-ready websites for ambitious teams" --site https://<your-domain> --email <contact-email>.
 3. Create/update Cloudflare resources with pnpm setup:cloudflare brightline-studio.
 4. Confirm wrangler.jsonc still has the DB binding, MEDIA binding, LOADER worker loader, nodejs_compat flag, and src/worker.ts entrypoint.
 5. Replace placeholder homepage, pricing, contact, and seeded blog content with project-specific content.
 6. Create or request an Open Graph image using docs/prompts/og-image.md, then wire it into the site metadata/media as appropriate.
-7. Run pnpm typecheck and pnpm build.
-8. Start pnpm dev -- --host 127.0.0.1 and smoke test /, /blog, /posts, /pricing, /contact, /search, and /rss.xml.
+7. Run pnpm test, pnpm typecheck, and pnpm build.
+8. Start pnpm dev --host 127.0.0.1 and run pnpm setup:dev, pnpm smoke:test, and pnpm test:browser against disposable local state.
 9. Open a go-live checklist issue from .github/ISSUE_TEMPLATE/go-live-checklist.md.
-10. Commit the setup changes.
+10. Configure contact delivery and review docs/launch.md before deployment. Commit the setup changes.
 ```

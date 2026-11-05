@@ -17,7 +17,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 22.16.0
 
       - name: Enable Corepack
         run: corepack enable
@@ -30,9 +30,21 @@ jobs:
           node --check scripts/init-project.mjs
           node --check scripts/setup-cloudflare.mjs
           node --check scripts/smoke-test.mjs
+          node --check scripts/check-launch.mjs
+          node --check scripts/setup-dev.mjs
+          node --check scripts/generate-og.mjs
+
+      - name: Test
+        run: pnpm test
 
       - name: Typecheck
         run: pnpm typecheck
 
       - name: Build
         run: pnpm build
+
+      - name: Install browser
+        run: pnpm exec playwright install --with-deps chromium
+
+      - name: Browser and accessibility checks
+        run: pnpm test:browser

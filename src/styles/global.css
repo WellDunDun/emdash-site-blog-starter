@@ -1,0 +1,42 @@
+@layer theme, base, components, utilities;
+/* Keep the existing CMS-aware reset rather than adding Preflight. */
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+@import "./tokens.css";
+@import "./theme.css";
+@source "../";
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Use the same runtime values in utilities and existing components. */
+@theme inline {
+  --color-canvas: var(--color-bg);
+  --color-surface: var(--color-surface);
+  --color-foreground: var(--color-text);
+  --color-muted: var(--color-muted);
+  --color-brand: var(--color-primary);
+  --color-border: var(--color-border);
+  --font-body: var(--font-sans);
+  --radius-control: var(--radius);
+}
+
+@layer base {
+  :where(a, button, input, select, textarea, summary):focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 4px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+.skip-link { position: fixed; top: -100px; left: 16px; z-index: 200; padding: 12px 20px; background: var(--color-bg); color: var(--color-text); border: 2px solid var(--color-accent); }
+.skip-link:focus { top: 12px; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

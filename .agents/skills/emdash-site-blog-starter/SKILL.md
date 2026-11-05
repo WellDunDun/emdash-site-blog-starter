@@ -42,11 +42,11 @@ Use or adapt this interview:
 1. Summarize the brief back to the user before making broad content changes.
 2. Use the configured EmDash and Astro MCP docs before changing CMS schema, Portable Text assumptions, Astro routing, server rendering, assets, or Cloudflare behavior.
 3. Run pnpm install if dependencies are missing.
-4. Run pnpm init:project <slug> --title "<Title>" --tagline "<Tagline>" for fresh projects.
+4. Run pnpm init:project <slug> --title "<Title>" --tagline "<Tagline>" --site https://<domain> --email <contact-email> for fresh projects. Apply local sample content with pnpm setup:dev after starting pnpm dev.
 5. Run pnpm setup:cloudflare <slug> only when the user wants Cloudflare resources created or updated.
 6. Customize seeded homepage, pricing/contact pages, menus, metadata, and the first blog posts using the approved brief.
 7. Prepare Open Graph/blog image direction from the visual brief. Use docs/prompts/og-image.md as the fallback template.
-8. Verify with pnpm typecheck, pnpm build, and pnpm smoke:test against a running local or production URL when available.
+8. Verify with pnpm test, pnpm typecheck, pnpm build, pnpm test:browser, and pnpm smoke:test. Browser checks operate on disposable local state. Read docs/launch.md before production setup.
 9. Open or update a go-live checklist issue from .github/ISSUE_TEMPLATE/go-live-checklist.md when launch preparation is in scope.
 10. Commit setup changes only when asked, or when the surrounding task already includes committing/pushing as the expected workflow.
 

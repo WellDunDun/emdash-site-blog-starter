@@ -74,10 +74,10 @@ Migrations and seed application happen automatically inside the runtime — ther
 
 ```bash
 # Start dev server (runs migrations, applies seed on empty DB, starts Astro)
-npx emdash dev
+pnpm dev
 
 # Start dev server and generate types from remote
-npx emdash dev --types
+pnpm exec emdash types
 
 # Export an existing database as a seed file
 # (the runtime auto-discovers .emdash/seed.json on first boot;

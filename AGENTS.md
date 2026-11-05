@@ -4,13 +4,17 @@ This is EmDash Site + Blog Starter: an AI-ready site and blog template built wit
 
 ```bash
 pnpm install
-npx emdash dev        # Start dev server, run migrations/seeding, generate types
+pnpm dev              # Start Astro/Worker dev server
+pnpm setup:dev        # Apply sample content and local dev admin
 npx emdash types      # Regenerate TypeScript types from schema
 pnpm build            # Build for Cloudflare Workers
 pnpm deploy           # Build and deploy with Wrangler
 pnpm init:project     # Rename a generated project from this template
 pnpm setup:cloudflare # Create D1/R2 resources with Wrangler
 pnpm smoke:test       # Check key public routes against a running dev/prod URL
+pnpm test             # Contact validation and real HTTP delivery tests
+pnpm test:browser     # Disposable local seed, browser and accessibility checks
+pnpm check:launch     # Verify public configuration before deployment
 ```
 
 The admin UI is at `http://localhost:4321/_emdash/admin`.
@@ -84,3 +88,9 @@ This template ships with `.codex/config.toml`, `.mcp.json`, `.cursor/mcp.json`, 
 - Call `Astro.cache.set(cacheHint)` on GET pages that query content, defensively if the route also handles non-GET methods.
 - Taxonomy names in queries must match seed names exactly: `category`, `tag`.
 - Marketing blocks are registered by `src/plugins/marketing-blocks/` and rendered through `MarketingBlocks.astro`.
+
+## Styling
+
+Tailwind 4 runs through `@tailwindcss/vite`. Shared defaults are in `src/styles/tokens.css`; brand overrides belong in `theme.css`. Read `docs/design-system.md` before changing styling. Verify `/design-system` in both modes and at mobile widths.
+
+The public URL and contact email live in `site.config.json`. Read `docs/launch.md` before deployment. Keep the official `@emdash-cms/cloudflare/worker` entry and cron trigger. Comments now import from `emdash/ui/comments`. Webhook secrets belong in Wrangler or `.dev.vars`, never tracked files.

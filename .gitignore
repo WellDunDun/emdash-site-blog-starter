@@ -37,3 +37,8 @@ Thumbs.db
 # Logs
 *.log
 npm-debug.log*
+
+!.dev.vars.example
+.playwright-cli/
+playwright-report/
+test-results/
