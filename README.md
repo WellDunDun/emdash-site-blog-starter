@@ -4,7 +4,7 @@ A reusable website and blog built with Astro 7, EmDash 1, Tailwind 4, and Cloudf
 
 ## Start locally
 
-Requires Node 22.16 or newer and Corepack.
+Requires Node 22.23.4 or newer and Corepack.
 
 ```bash
 corepack enable
